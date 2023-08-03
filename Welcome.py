@@ -24,6 +24,7 @@ location = st.selectbox('select location', file_name_list)  #to be able to selec
 
 df = pd.read_csv(location)
 p = figure(x_axis_label=x_axis + ' wt%', y_axis_label=y_axis + ' wt%')
-p.circle_dot(df[x_axis]/10000, df[y_axis]/10000, size=10, color='red')
+p.circle(df[x_axis]/10000, df[y_axis]/10000, size=5, color='red')
+
 
 st.bokeh_chart(p, use_container_width=True)
