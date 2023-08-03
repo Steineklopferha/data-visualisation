@@ -17,7 +17,7 @@ location = st.selectbox('select location', file_name_list)  #to be able to selec
 df = pd.read_csv(location)
 
 
-el_list = df.columns.tolist()[range(len(df))]
+el_list = df.columns.tolist()[27:80]
 x_axis = st.selectbox('select element for x', el_list)
 y_axis = st.selectbox('select element for y', el_list)
 
