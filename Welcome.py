@@ -37,7 +37,7 @@ std = np.std(df[y_axis]/10000)
 
 # plot 
 ## the x vs. y data
-p = figure(title=location-('.csv') + x_axis + ' vs. ' + y_axis, x_axis_label=x_axis + ' wt%', y_axis_label=y_axis + ' wt%')
+p = figure(title=location + x_axis + ' vs. ' + y_axis, x_axis_label=x_axis + ' wt%', y_axis_label=y_axis + ' wt%')
 p.circle(df[x_axis]/10000, df[y_axis]/10000, size=5, color='red')
 
 ## the mean line of y
