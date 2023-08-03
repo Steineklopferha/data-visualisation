@@ -15,7 +15,7 @@ st.write(file_name_list)
 #st.write('Hello World!')
 
 # choose location and read data of it in
-location = st.multiselect('select location', file_name_list)  #to be able to select multiple files (multiselect)
+location = st.selectbox('select location', file_name_list)  #to be able to select multiple files (multiselect)
 #for i in location:
 df = pd.read_csv(location)
 
