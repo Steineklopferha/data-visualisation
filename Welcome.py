@@ -23,6 +23,8 @@ for i in location:
   el_list = df.columns.tolist()[27:80]
   x_axis = st.selectbox('select element for x', el_list)
   y_axis = st.selectbox('select element for y', el_list)
+
+  
   
   #calculations
   
@@ -40,10 +42,22 @@ for i in location:
   
   ## the mean line of y
   p.line(df[x_axis]/10000, mean, line_width=1.5, color="orange")
+
+
+  # choose the std you want  
+  std_choice = st.radio("What ±standard deviation do you want?", ('1', '2', '3'))
   
   ## the std of y
-  p.line(df[x_axis]/10000, mean-std, line_width=0.5, color="navy")
-  p.line(df[x_axis]/10000, mean+std, line_width=0.5, color="navy")
+  if std_choice == '1':
+    p.line(df[x_axis]/10000, mean-std, line_width=0.5, color="navy")
+    p.line(df[x_axis]/10000, mean+std, line_width=0.5, color="navy")
+  elif std_choice == '2':
+    p.line(df[x_axis]/10000, mean-(2*std), line_width=0.5, color="navy")
+    p.line(df[x_axis]/10000, mean+(2*std), line_width=0.5, color="navy")
+  elif std_choice == '3':
+    p.line(df[x_axis]/10000, mean-(3*std), line_width=0.5, color="navy")
+    p.line(df[x_axis]/10000, mean+(3*std), line_width=0.5, color="navy")
+    
   
   st.bokeh_chart(p, use_container_width=True)
 
