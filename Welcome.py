@@ -17,8 +17,8 @@ df = pd.read_csv('Bastar Craton.csv')
 
 
 el_list = df.columns.tolist()[27:80]
-x_axis = st.selectbox('select element', el_list)
-#y_axis = st.selectbox('select element', el_list)
+x_axis = st.selectbox('select element for x', el_list)
+y_axis = st.selectbox('select element for y', el_list)
 
 location = st.selectbox('select location', file_name_list)  #to be able to select multiple files (multiselect)
 
