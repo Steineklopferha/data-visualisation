@@ -22,14 +22,8 @@ x_axis = st.selectbox('select element', el_list)
 
 st.multiselect('select location', file_name_list,file_name_list[0])  #to be able to select multiple files
 
-x = [1, 2, 3, 4, 5]
-y = [6, 7, 2, 4, 5]
 
-p = figure(
-    title='simple line example',
-    x_axis_label='x',
-    y_axis_label='y')
-
-p.line(x, y, legend_label='Trend', line_width=2)
+p = figure(x_axis_label='Mg wt%', y_axis_label='Si wt%')
+p.star(df['Mg']/10000, df['Si']/10000, size=10, color='red')
 
 st.bokeh_chart(p, use_container_width=True)
