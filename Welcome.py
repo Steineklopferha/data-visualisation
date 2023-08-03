@@ -23,7 +23,7 @@ y_axis = st.selectbox('select element for y', el_list)
 location = st.selectbox('select location', file_name_list)  #to be able to select multiple files (multiselect)
 
 df = pd.read_csv(location)
-p = figure(title=location + x_axis + 'vs.' + y_axis, x_axis_label=x_axis + ' wt%', y_axis_label=y_axis + ' wt%')
+p = figure(title=location + x_axis + ' vs. ' + y_axis, x_axis_label=x_axis + ' wt%', y_axis_label=y_axis + ' wt%')
 p.circle(df[x_axis]/10000, df[y_axis]/10000, size=5, color='red')
 
 
