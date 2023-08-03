@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
-import matplotlib.pyplot as plt
+from bokeh.plotting import figure
 
 file_name_list = []
 for i in os.listdir():
@@ -21,9 +21,14 @@ y_axis = st.selectbox('select element', el_list)
 
 location = st.multiselect('select location', file_name_list,file_name_list[0])  #to be able to select multiple files
 
+x = [1, 2, 3, 4, 5]
+y = [6, 7, 2, 4, 5]
 
-plt.scatter(df[x_axis]/10000, df[y_axis]/10000) # /10000 wechslt von wt-ppm to wt-%
-plt.xlabel(x_axis +  'wt%')
-plt.ylabel(y_axis +  'wt%')
-plt.show()
+p = figure(
+    title='simple line example',
+    x_axis_label='x',
+    y_axis_label='y')
 
+p.line(x, y, legend_label='Trend', line_width=2)
+
+st.bokeh_chart(p, use_container_width=True)
