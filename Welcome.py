@@ -21,11 +21,9 @@ y_axis = st.selectbox('select element', el_list)
 
 location = st.multiselect('select location', file_name_list,file_name_list[0])  #to be able to select multiple files
 
-ef my_plot(el_x, el_y, filename):
-    dfe = pd.read_csv(filename)
-    plt.scatter(dfe[el_x]/10000, dfe[el_y]/10000) # /10000 wechslt von wt-ppm to wt-%
-    plt.xlabel(el_x +  'wt%')
-    plt.ylabel(el_y +  'wt%')
-    return plt.show()
 
-my_plot(x_axis, y_axis, location)
+plt.scatter(df[x_axis]/10000, df[y_axis]/10000) # /10000 wechslt von wt-ppm to wt-%
+plt.xlabel(x_axis +  'wt%')
+plt.ylabel(y_axis +  'wt%')
+plt.show()
+
