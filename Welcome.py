@@ -28,11 +28,11 @@ p = figure(title=location + x_axis + ' vs. ' + y_axis, x_axis_label=x_axis + ' w
 p.circle(df[x_axis]/10000, df[y_axis]/10000, size=5, color='red')
 
 mean = np.mean(df[y_axis]/10000)
-p.line(df[x_axis]/10000, mean, line_width=3, color="orange")
+p.line(df[x_axis]/10000, mean, line_width=1.5, color="orange")
 
 std = np.std(df[y_axis]/10000)
-p.line(df[x_axis]/10000, mean-std, line_width=1, color="navy")
-p.line(df[x_axis]/10000, mean+std, line_width=1, color="navy")
+p.line(df[x_axis]/10000, mean-std, line_width=0.5, color="navy")
+p.line(df[x_axis]/10000, mean+std, line_width=0.5, color="navy")
 
 st.bokeh_chart(p, use_container_width=True)
 
